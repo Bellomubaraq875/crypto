@@ -17,7 +17,6 @@ const Portfolio = lazy(loadPortfolio);
 const Converter = lazy(loadConverter);
 const Exchange = lazy(loadExchange);
 
-
 const PageFallback = () => (
   <div className="stack">
     <Skeleton w={220} h={36} />
@@ -29,7 +28,6 @@ function App() {
   const { toast } = useApp();
   const { pathname } = useLocation();
 
-  // Use a block body so the effect never returns a value as a cleanup function.
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

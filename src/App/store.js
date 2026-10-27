@@ -8,7 +8,7 @@ export const store = configureStore({
     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
+    getDefaultMiddleware({ serializableCheck: false, immutableCheck: false })
       .concat(coinGeckoApi.middleware)
       .concat(cryptoNewsApi.middleware),
 });
